@@ -65,7 +65,7 @@ const Profile = () => {
   const getProductData= async () => {
     try {
       setLoading(true);
-      const url = `http://localhost:3000/product/all`;
+      const url = ` ${import.meta.env.VITE_APP_SERVER_BASEURL}/product/all`;
       const response = await axios.get(url);
       console.log(response.data.response)
       if (response.data.success) {

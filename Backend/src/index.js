@@ -6,8 +6,9 @@ const bodyParser = require("body-parser");
 const passort = require("passport");
 const passportAuth = require("./utils/jwt-middleware.js");
 const cors = require("cors");
-
-
+const dotenv = require('dotenv');
+dotenv.config();
+PORT = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
@@ -19,7 +20,7 @@ passportAuth(passort);
 app.use("/uploads", express.static("uploads"));
 app.use("/user", apiRoutes);
 app.use("/product" , productRoutes);
-app.listen(3000, () => {
-  console.log("App is running on PORT 3000");
+app.listen(PORT, () => {
+  console.log(`App is running on PORT ${PORT} `);
   dbConnect();
 });
