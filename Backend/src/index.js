@@ -8,7 +8,7 @@ const passportAuth = require("./utils/jwt-middleware.js");
 const cors = require("cors");
 const dotenv = require('dotenv');
 dotenv.config();
-PORT = process.env.PORT;
+PORT =process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
