@@ -20,7 +20,7 @@ This is a "FULL STACK" project . It has following features.
 
 ## Backend Technologies
 
--**multer**: to store picture in aws
+- **multer**: to store picture in aws
 - **bcrypt**: A library to help you hash passwords.
 - **body-parser**: Node.js body parsing middleware.
 - **cors**: Middleware for enabling Cross-Origin Resource Sharing (CORS) in Express.
