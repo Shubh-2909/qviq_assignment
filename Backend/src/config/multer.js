@@ -1,11 +1,11 @@
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const aws = require('aws-sdk');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const path = require('path');  
 
-dotenv.config();
-
+// dotenv.config();
+console.log(process.env.BUCKET_NAME);
 aws.config.update({
     region:process.env.REGION,
     secretAccessKey:process.env.SECRET_ACCESS_KEY,

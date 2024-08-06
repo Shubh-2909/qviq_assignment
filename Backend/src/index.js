@@ -1,3 +1,8 @@
+const dotenv = require('dotenv');
+
+const path = require("path");
+const envPath = path.resolve(__dirname, "./config.env"); //irrespective CWD path is fixed
+dotenv.config({ path: envPath });
 const express = require("express");
 const dbConnect = require("./utils/dbConnect");
 const apiRoutes = require("./routes/user-routes");
@@ -6,8 +11,7 @@ const bodyParser = require("body-parser");
 const passort = require("passport");
 const passportAuth = require("./utils/jwt-middleware.js");
 const cors = require("cors");
-const dotenv = require('dotenv');
-dotenv.config();
+
 PORT =process.env.PORT;
 const app = express();
 app.use(express.json());

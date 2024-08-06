@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const userSchema = new mongoose.Schema({
@@ -70,9 +70,9 @@ const userSchema = new mongoose.Schema({
 }, {timestamps: true});
 
 
-userSchema.methods.comparePassword = function compare(password) {
-    return bcrypt.compareSync(password, this.password);
-}
+// userSchema.methods.comparePassword = function compare(password) {
+//     return bcrypt.compareSync(password, this.password);
+// }
 
 userSchema.methods.genJWT = function generate() {
     return jwt.sign({id: this._id, email: this.email}, 'twitter_secret', {
